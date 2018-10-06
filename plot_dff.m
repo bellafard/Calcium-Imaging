@@ -1,7 +1,7 @@
 clear; clc; close all;
 
 %% Adding paths
-addpath(genpath('/media/s2v2/Arash/Codes/Sources/CNMF_E/ca_source_extraction'));
+addpath(genpath('/media/s2v2/Arash/caim/Sources/CNMF_E/ca_source_extraction'));
 load('/media/s2v2/Arash/C142/2p/2018_09_17_am/20180917_13_13_40_c142_s01/20180917_13_13_40_c142_s01_XYT_rig_source_extraction/frames_1_24000/LOGS_02-Oct_12_24_07/02-Oct_14_23_21.mat');
 
 %% 
