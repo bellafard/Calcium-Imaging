@@ -9,7 +9,8 @@ neuron = Sources2D();
 % nams = '/media/s2v2/Arash/TestData/c142.tif';
 % nam = neuron.select_data(nams);
 
-foldername = '/home/arash/s3/C153/2p/20181210/20181210_09_35_55_c153_s03';
+% foldername = '/home/arash/s3/C153/2p/20181210/20181210_09_35_55_c153_s03';
+foldername = '/home/arash/Desktop';
 filetype = 'tif';
 files = subdir(fullfile(foldername,['*.',filetype]));
 nams = files(1).name;
@@ -74,7 +75,7 @@ frame_range = [];   % when [], uses all frames
 save_initialization = false;    % save the initialization procedure as a video. 
 use_parallel = true;    % use parallel computation for parallel computing 
 show_init = true;   % show initialization results 
-choose_params = false; % manually choose parameters 
+choose_params = true; % manually choose parameters 
 center_psf = false;  % set the value as true when the background fluctuation is large (usually 1p data) 
                     % set the value as false when the background fluctuation is small (2p)
 
