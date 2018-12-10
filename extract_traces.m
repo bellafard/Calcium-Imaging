@@ -113,6 +113,7 @@ neuron.Fs = Fs;
 
 %% distribute data and be ready to run source extraction 
 neuron.getReady(pars_envs); 
+fprintf('data distribution is done\n')
 
 %% initialize neurons from the video data within a selected temporal range 
 if choose_params
