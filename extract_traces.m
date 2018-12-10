@@ -9,8 +9,8 @@ neuron = Sources2D();
 % nams = '/media/s2v2/Arash/TestData/c142.tif';
 % nam = neuron.select_data(nams);
 
-% foldername = '/home/arash/s3/C153/2p/20181210/20181210_09_35_55_c153_s03';
-foldername = '/home/arash/Desktop';
+% foldername = '/home/arash/Desktop';
+foldername = '/home/arash/s3/C143/2p/20181109_11_48_28_c143_test/';
 filetype = 'tif';
 files = subdir(fullfile(foldername,['*.',filetype]));
 nams = files(1).name;
@@ -114,6 +114,7 @@ neuron.Fs = Fs;
 
 %% distribute data and be ready to run source extraction 
 neuron.getReady(pars_envs); 
+fprintf('data distribution is done\n')
 
 %% initialize neurons from the video data within a selected temporal range 
 if choose_params
