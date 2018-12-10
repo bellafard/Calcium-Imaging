@@ -9,7 +9,8 @@ neuron = Sources2D();
 % nams = '/media/s2v2/Arash/TestData/c142.tif';
 % nam = neuron.select_data(nams);
 
-foldername = '/home/arash/Desktop';
+%foldername = '/home/arash/Desktop';
+foldername = '/home/arash/s3/C143/2p/20181109_11_48_28_c143_test/';
 filetype = 'tif';
 files = subdir(fullfile(foldername,['*.',filetype]));
 nams = files(1).name;

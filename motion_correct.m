@@ -6,7 +6,7 @@ addpath(genpath('deconvolution'));
 
 gcp;
 
-foldername = '/home/arash/s3/C153/2p/20181210/'; % folder where all the files are located.
+foldername = '/home/arash/s3/C143/2p/'; % folder where all the files are located.
 
 filetype = 'raw';
 files = subdir(fullfile(foldername,['*.',filetype]));
