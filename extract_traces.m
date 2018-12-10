@@ -9,9 +9,9 @@ neuron = Sources2D();
 % nams = '/media/s2v2/Arash/TestData/c142.tif';
 % nam = neuron.select_data(nams);
 
-foldername = '/media/s2v2/Arash/C142/2p';
+foldername = '/home/arash/s3/C153/2p/20181210/20181210_09_35_55_c153_s03';
 filetype = 'tif';
-files = subdir(fullfile(foldername,['2018*.',filetype]));
+files = subdir(fullfile(foldername,['*.',filetype]));
 nams = files(1).name;
 nam = neuron.select_data(nams);
 
@@ -19,10 +19,10 @@ nam = neuron.select_data(nams);
 % -------------------------    COMPUTATION    -------------------------  %
 pars_envs = struct('memory_size_to_use', 120, ...   % GB, memory space you allow to use in MATLAB
     'memory_size_per_patch', 0.5, ...   % GB, space for loading data within one patch
-    'patch_dims', [32, 32]);  %GB, patch size
+    'patch_dims', [30, 40]);  %GB, patch size
 
 % -------------------------      SPATIAL      -------------------------  %
-gSig = 1.2;       % pixel, gaussian width of a gaussian kernel for filtering the data. 0 means no filtering
+gSig = 0.5;       % pixel, gaussian width of a gaussian kernel for filtering the data. 0 means no filtering
 gSiz = 30;        % pixel, neuron diameter
 ssub = 1;         % spatial downsampling factor
 with_dendrites = false;   % with dendrites or not
@@ -54,7 +54,7 @@ detrend_method = 'local_min';  % compute the local minimum as an estimation of t
 % -------------------------     BACKGROUND    -------------------------  %
 bg_model = 'svd';  % model of the background {'ring', 'svd'(default), 'nmf'}
 nb = 1;             % number of background sources for each patch (only be used in SVD and NMF model)
-ring_radius = 15;  % when the ring model used, it is the radius of the ring used in the background model. 
+ring_radius = 13;  % when the ring model used, it is the radius of the ring used in the background model. 
                     %otherwise, it's just the width of the overlapping area 
 
 % -------------------------      MERGING      -------------------------  %
@@ -95,7 +95,7 @@ neuron.updateParams('gSig', gSig, ...       % -------- spatial --------
     'dist', updateA_bSiz, ...
     'spatial_constraints', spatial_constraints, ...
     'tsub', tsub, ...                       % -------- temporal -------- 
-    'deconv_options', deconv_options, ...    '
+    'deconv_options', deconv_options, ...
     'nk', nk, ...
     'detrend_method', detrend_method, ...
     'background_model', bg_model, ...       % -------- background -------- 

@@ -1,12 +1,12 @@
 clear all; clc; close all;
 
-addpath(genpath('/media/s2v2/Arash/Codes/Sources/NoRMCorre'));
+addpath(genpath('Sources/NoRMCorre'));
 addpath(genpath('utilities'));
 addpath(genpath('deconvolution'));
 
 gcp;
 
-foldername = '/media/s2v2/Arash/cTest/2p'; % folder where all the files are located.
+foldername = '/home/arash/s3/C153/2p/20181210/'; % folder where all the files are located.
 
 filetype = 'raw';
 files = subdir(fullfile(foldername,['*.',filetype]));
@@ -34,6 +34,6 @@ for i = 1:numFiles
     [M,shifts,template,options_mc,col_shift] = normcorre_batch_even(fullname,options_mc,template);
     save(fullfile(folder_name,[file_name,'_shifts',append,'.mat']),'shifts','-v7.3'); % save shifts of each file at the respective folder        
 
-    fprintf([filename,'\n motion correction is done.\n'])
+    fprintf(['\n\n', file_name,' motion correction is done.\n\n'])
 end
 
