@@ -23,8 +23,8 @@ pars_envs = struct('memory_size_to_use', 120, ...   % GB, memory space you allow
     'patch_dims', [30, 40]);  %GB, patch size
 
 % -------------------------      SPATIAL      -------------------------  %
-gSig = 0.5;       % pixel, gaussian width of a gaussian kernel for filtering the data. 0 means no filtering
-gSiz = 30;        % pixel, neuron diameter
+gSig = 1.0;       % pixel, gaussian width of a gaussian kernel for filtering the data. 0 means no filtering
+gSiz = 17;        % pixel, neuron diameter
 ssub = 1;         % spatial downsampling factor
 with_dendrites = false;   % with dendrites or not
 if with_dendrites
