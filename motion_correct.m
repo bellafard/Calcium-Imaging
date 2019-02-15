@@ -8,10 +8,10 @@ gcp;
 
 foldername = '/home/arash/s3/C143/2p/'; % folder where all the files are located.
 
-filetype = 'raw';
+filetype = 'tif';
 files = subdir(fullfile(foldername,['*.',filetype]));
-% FOV = size(read_file(files(1).name,1,1));
-FOV = [512,512];
+FOV = size(read_file(files(1).name,1,1));
+% FOV = [512,512];
 numFiles = length(files);
 
 non_rigid = false;      % flag for non-rigid motion correction
